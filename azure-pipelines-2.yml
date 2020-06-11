@@ -36,7 +36,10 @@ steps:
 - publish: '$(Build.ArtifactStagingDirectory)'
   artifact: drop
 
+- download: current
+  artifact: drop
 - task: AzureWebApp@1
+  displayName: 'Azure App Service Deploy: website'
   inputs:
     azureSubscription: 'Azure subscription 1(bc04f5a2-8205-4c4a-957b-4200d1846260)'
     appType: 'webApp'
