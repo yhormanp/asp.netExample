@@ -48,6 +48,6 @@ steps:
     resourceGroupName: 'myppalqnamakerservicerg'
     slotName: 'production'
     # package: '$(System.DefaultWorkingDirectory)/**/*.zip'
-    package: '$(Pipeline.Workspace)/*.zip'
+    package: '$(Pipeline.Workspace)/drop/*.zip'
     deploymentMethod: 'auto'
 
