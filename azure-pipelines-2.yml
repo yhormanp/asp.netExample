@@ -69,7 +69,7 @@ steps:
     SlotName: 'production'
     packageForLinux: '$(Pipeline.Workspace)/drop/*.zip'
     enableCustomDeployment: true
-    DeploymentType: 'zipDeploy''
+    DeploymentType: 'zipDeploy'
 
 
 
