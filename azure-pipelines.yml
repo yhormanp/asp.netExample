@@ -49,7 +49,7 @@ steps:
     azureSubscription: 'Azure subscription 1(bc04f5a2-8205-4c4a-957b-4200d1846260)'
     appType: 'webApp'
     WebAppName: 'aspnetbasicexample'
-    packageForLinux: '$(Pipeline.Workspace)/drop/*.zip'
+    packageForLinux: '$(Build.ArtifactStagingDirectory)/drop/*.zip'
     enableCustomDeployment: true
     DeploymentType: 'webDeploy'
 
