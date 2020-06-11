@@ -75,10 +75,10 @@ steps:
 
 
 
-- task: AzureWebApp@1
-  inputs:
-    azureSubscription: 'Azure subscription 1(bc04f5a2-8205-4c4a-957b-4200d1846260)'
-    appType: 'webApp'
-    appName: 'aspnetbasicexample'
-    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
-    deploymentMethod: 'auto'
+# - task: AzureWebApp@1
+#   inputs:
+#     azureSubscription: 'Azure subscription 1(bc04f5a2-8205-4c4a-957b-4200d1846260)'
+#     appType: 'webApp'
+#     appName: 'aspnetbasicexample'
+#     package: '$(System.DefaultWorkingDirectory)/**/*.zip'
+#     deploymentMethod: 'auto'
