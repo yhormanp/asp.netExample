@@ -22,11 +22,18 @@ steps:
     restoreSolution: '$(solution)'
 
 
+# - task: VSBuild@1
+#   inputs:
+#     solution: '$(solution)'
+#     configuration: 'release'
+#     msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactStagingDirectory)"'
+
 - task: VSBuild@1
   inputs:
     solution: '$(solution)'
     configuration: 'release'
-    msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactStagingDirectory)"'
+    clean: true
+    logProjectEvents: false
 
 
 - task: VSTest@2
