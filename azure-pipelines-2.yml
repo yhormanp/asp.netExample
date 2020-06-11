@@ -58,6 +58,19 @@ steps:
 #     WebAppName: 
 #     packageForLinux: '$(Pipeline.Workspace)/drop/*.zip'
 
+# - task: AzureRmWebAppDeployment@4
+#   inputs:
+#     ConnectionType: 'AzureRM'
+#     azureSubscription: 'Azure subscription 1(bc04f5a2-8205-4c4a-957b-4200d1846260)'
+#     appType: 'webApp'
+#     WebAppName: 'aspnetbasicexample'
+#     deployToSlotOrASE: true
+#     ResourceGroupName: 'myppalqnamakerservicerg'
+#     SlotName: 'production'
+#     packageForLinux: '$(Pipeline.Workspace)/drop/*.zip'
+#     enableCustomDeployment: true
+#     DeploymentType: 'zipDeploy'
+
 - task: AzureRmWebAppDeployment@4
   inputs:
     ConnectionType: 'AzureRM'
@@ -69,7 +82,9 @@ steps:
     SlotName: 'production'
     packageForLinux: '$(Pipeline.Workspace)/drop/*.zip'
     enableCustomDeployment: true
-    DeploymentType: 'zipDeploy'
+    DeploymentType: 'webDeploy'
+
+
 
 
 
