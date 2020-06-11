@@ -36,3 +36,15 @@ steps:
 - publish: '$(Build.ArtifactStagingDirectory)'
   artifact: drop
 
+- task: AzureWebApp@1
+  inputs:
+    azureSubscription: 'Azure subscription 1(bc04f5a2-8205-4c4a-957b-4200d1846260)'
+    appType: 'webApp'
+    appName: 'aspnetbasicexample'
+    deployToSlotOrASE: true
+    resourceGroupName: 'myppalqnamakerservicerg'
+    slotName: 'production'
+    # package: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    package: '$(Pipeline.Workspace)/*.zip'
+    deploymentMethod: 'auto'
+
