@@ -64,6 +64,16 @@ steps:
     ArtifactName: 'drop'
     publishLocation: 'Container'
 
+
+# - task: AzureRmWebAppDeployment@4
+#   inputs:
+#     ConnectionType: 'AzureRM'
+#     azureSubscription: 'Azure subscription 1(bc04f5a2-8205-4c4a-957b-4200d1846260)'
+#     appType: 'webApp'
+#     WebAppName: 'aspnetbasicexample'
+#     packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+
+
 - task: AzureRmWebAppDeployment@4
   inputs:
     ConnectionType: 'AzureRM'
@@ -71,3 +81,5 @@ steps:
     appType: 'webApp'
     WebAppName: 'aspnetbasicexample'
     packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    enableCustomDeployment: true
+    DeploymentType: 'webDeploy'
